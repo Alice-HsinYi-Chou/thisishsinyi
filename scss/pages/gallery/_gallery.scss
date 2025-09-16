@@ -1,0 +1,405 @@
+@use '../../util/' as u;
+
+.nav{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+}
+.logo{
+    &__image{
+        width: clamp(45px, 5.5vw, 150px); // Responsive width for the default logo
+        height: clamp(45px, 5.5vw, 150px);
+        opacity: 0.8;
+        transition: 0.5s all ease;
+    }
+    &__image:hover{
+        content: url(/assets/logos/new-test-modified.png);
+        opacity: 0.9;
+        scale: 1.05;
+    }
+}
+
+
+
+.gallery {
+    &__hero{
+        position: relative;
+        width: 100%;
+        height: 0; /* Initial height will be set by padding-bottom */
+        padding-bottom: 66.65%; /* Default 16:9 aspect ratio */
+        overflow: hidden;
+        display: flex; // Make it a flex container
+        align-items: center; // Centers vertically
+        justify-content: center; // Centers horizontally
+    }
+    &__background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/img/gallery/00-hero/00.jpg');
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        z-index: -2;  //ask is it necessary to set at -2, or -1 would work fine
+    }
+    &__content{
+        position: absolute; // Changed from relative to absolute
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.85rem;
+        }
+    &__direct{
+        position: relative; // Change to relative for flex to work
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+
+        &-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:black;
+        }
+    }
+
+    &__entry-text {
+        font-size: clamp(0.2rem, 2.65vw, 2.3rem);
+        color: rgba(255, 255, 255, 0.85);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        border-bottom: 3px solid  rgba(229, 226, 226, 0.85);
+    }
+
+    &__entry-icon{
+        height: 40px; 
+        align-items: center;
+    }
+    
+    &__info{
+        position: absolute; // Changed from transform
+        bottom: 2rem;
+        right: 2rem;
+        color: var(--color-gray-light);
+        opacity: 0.5;
+        transition: all 0.2s ease;
+        transform: translateY(20%);
+    }
+    &__info:hover{
+        opacity:0.75;
+    }
+
+
+    &__top-icon{
+        height: 35px; 
+        align-items: center;
+    }
+}
+
+.transition{
+    &__btwsection {
+        display: block;
+        //background:rgb(254, 254, 204);
+        background: rgb(128,136,138,0.6);
+        height: 75vh;
+    }
+
+    &__btwalbum{
+        height: 85vh;
+    }
+}
+
+.gallery-showcase{
+    z-index: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0;
+}
+.gallery-showcase::before {
+    display: none;
+}
+.album {
+    &__container{
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(128,136,138,0.6);
+        padding-top: 15vh;
+        padding-bottom: 1rem;
+        transform: translateY(10%);
+        opacity: 0;
+        transition: opacity 1.5s ease, transform 1.5s ease;
+        border-radius:2px;
+    }
+    &__container.in-view{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    &__container:first-of-type {
+        padding-top: 15vh;
+        margin-top: 75vh;
+    }
+
+    &__overview{
+        width: 100%;
+        //max-width: 1200px;
+        //width: 70vw;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(0.5rem, 2vw, 2rem) clamp(1rem, 3vw, 1.5rem);
+        padding: clamp(1rem, 3vw, 2.5rem);
+        border-radius: 10px;
+        box-sizing: border-box;
+        /* Ensure this takes up most but not all of the container height */
+        flex: 1;
+        justify-items: center;
+    }
+
+    &__pic-container{
+        position: relative;
+        width: 100%;
+        padding-top: 66.67%; /* 3:2 aspect ratio */
+        overflow: hidden;
+        border-radius: 6px;
+    }
+
+    &__pic-container img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    &__pic-container img:hover{
+        transform: scale(1.05);
+    }
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.3rem auto 1.5rem;
+        width:80%;
+        padding: clamp(0.5rem, 1vw, 2rem) clamp(1rem, 3vw, 2.5rem);
+        position: relative; // Added for divider positioning
+    }
+    &__name {
+        padding: 0.1rem 1rem;  
+        line-height:0.8rem;
+    }
+    &__name p{
+        @include u.fs-fluid(u.rem(250), u.rem(1200), u.rem(10), u.rem(24));
+        color:#f5f1e8;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+        letter-spacing: 0.3px;
+        font-weight: 400;
+    }
+    &__info::after {
+        content: "";
+        position: absolute;
+        left: 25%; // Start after the album name
+        right: 25%; // End before the button
+        top: 50%;
+        height: 1px;
+        width: 55%; // Take up middle 50% of container
+        background: linear-gradient(to right, 
+                     transparent, 
+                     rgba(255, 255, 255, 0.6), 
+                     transparent);
+        opacity: 0.7;
+}
+
+   //  &__btn-more{
+        display: inline-block;
+        padding: 0.2rem 2rem;
+         background: rgba(255, 255, 255, 0.3);
+        
+        color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        @include u.fs-fluid(u.rem(250), u.rem(1200), u.rem(10), u.rem(22));
+
+   //  }
+   //  &__btn-more:hover{
+        border-color: rgba(0, 0, 0, 0.9); /* Darker border for emphasis */
+        background: rgba(0, 0, 0, 0.2); /* Subtle dark tint */
+        color: black;
+        transform: scale(1.05); /* Slight growth for interactivity */       
+    // }
+    &__btn-more {
+        display: inline-block;
+        padding: 0.2rem 1.7rem;
+        background: rgba(255, 255, 255, 0.08);
+        color: #f3efe9;
+        text-decoration: none;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        transition: all 0.3s ease;
+        
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      }
+      
+    &__btn-more:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        transform: scale(1.05);
+      }
+      
+}
+
+
+
+.full-view {
+    $bg-color: rgba(0, 0, 0, 0.9);
+    $padding-horizontal: clamp(20px, 8vw, 100px);
+    $padding-vertical: clamp(10px, 3vh, 30px);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: $padding-vertical $padding-horizontal;
+    box-sizing: border-box;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__content {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        
+        max-width: 100%;
+        max-height: calc(100vh - clamp(80px, 15vh, 120px));
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        box-shadow: $box-shadow;
+        margin: auto;
+    }
+
+    &__close {
+        $close-btn-size: clamp(36px, 5vw, 44px);
+        $close-btn-font: clamp(18px, 2.5vw, 24px);
+         //$close-btn-position: clamp(20px, 4vh, 40px);
+        //$close-btn-border: 2px solid white;
+        $close-btn-border: none;
+
+        position: absolute;
+        top: clamp(20px, 4vh, 40px);
+        right:clamp(20px, 10vh, 60px);
+        background-color: transparent;
+        color: white;
+        border: $close-btn-border;
+        border-radius: 50%;
+        width: $close-btn-size;
+        height: $close-btn-size;
+        font-size: $close-btn-font;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease;
+        z-index: 10000;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+
+
+
+
+
+@media (min-width: 600px)  {
+    .album {
+        &__overview{
+            max-width: 90%;
+        }
+
+        &__info{
+            max-width: 90%;
+            padding: 0 clamp(1rem, 3vw, 2.5rem);
+        }
+    }
+  }
+
+@media (max-width: 599px)  {
+    .gallery-showcase{
+        gap: 2rem;
+        padding: 1rem 0;  
+    }
+    .album {
+        &__overview {
+            grid-template-columns: 1fr;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 1.25rem;
+            gap: 12px;
+        }
+        &__pic-container {
+            padding-top: 66.67%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        &__pic-container:nth-child(n+3) {
+            display: none;
+        }
+        &__pic-container img {
+            transition: none;
+        }
+        &__pic-container img:hover {
+            transform: none;
+        }
+        &__info{
+            max-width: 250px;
+            padding: 0;
+            margin: 0.5rem auto 0;
+        }
+    }
+}

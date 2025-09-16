@@ -1,0 +1,18 @@
+[
+  {
+    "title": "The Transforming Power of Stillness",
+    "subtitle": "Small movements, big realizations.",
+    "date": "May 12, 2025",
+    "image": "assets/images/stillness.jpg",
+    "content": "<p>This is the full article content...</p>",
+    "url": "/articles/stillness.html"
+  },
+  {
+    "title": "Why Less is More",
+    "subtitle": "Embracing minimal work.",
+    "date": "Apr 28, 2025",
+    "image": "assets/images/less-is-more.jpg",
+    "content": "<p>Another article content...</p>",
+    "url": "/articles/less.html"
+  }
+]

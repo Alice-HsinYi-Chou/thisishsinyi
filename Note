@@ -1,0 +1,106 @@
+NOW Mypicks - BEst, First, Quote, Content, 
+
+-file structure
+-content then blog content; now-content
+
+- now page seem a bit colorless and boring, i haven't have ideas of how to upgrade it
+- dark/light mode for blog and now page. What else.
+
+- blog page well set.
+
+- now page is working in local
+  while have to set up for background color, padding for readibility on larger screens
+- build the mobile phone.
+-
+
+cool inspiration
+
+- link with a audio https://miko.ademagic.com/blog/blogroll/
+  coool design of the 郵票
+  https://arun.is/subscribe/
+  Note-
+  Side story
+  interest find that other people visit taiwan
+  https://arun.is/blog/taoyuan-yingge/
+
+* be vitenem pho vs be vitenam pro
+  blog list
+  https://blog.chriswm.com/lists/
+
+fav homepage
+https://anhvn.com/
+
+article:
+
+- wider box for arichive article.
+- in the future, built a next page.
+
+nownownowpage
+
+- headlines:
+
+test the image upload? and test if content page is universal adaptive.
+single article page. could work on it later?
+
+feed in claudi, to make the css having better class name.-> havn't paste the js and json file
+https://claude.ai/chat/fe914473-fcc4-49df-b139-11b1dc413480 done.
+
+have basic strucutre for article and note. and then make the json file and add js code https://chatgpt.com/c/6822e663-e358-8006-adfb-bb16c0fac9b1.search: Update Your JavaScript to Load JSON
+
+https://claude.ai/chat/1a5d3008-6937-4e3c-88aa-f86262d531b0
+trying to fix the ratio problem that the display could show all the content.
+add mobile codes.
+
+https://codepen.io/Alice-HsinYi-Chou/pen/ByaEwoQ?editors=0100
+logomaker
+https://claude.ai/chat/c728335e-6ec7-4076-acf4-dc3d1136e341
+https://codepen.io/Alice-HsinYi-Chou/pen/bNGYgxg?editors=0100
+https://codepen.io/Alice-HsinYi-Chou/pen/emYGaZJ
+https://www.transparenttextures.com/
+//position//
+justify-content: center; /_ Centers content horizontally._/
+align-items: center; /_ Centers content vertically._/
+text-align: center; /_Ensures text inside is centered_/
+
+//recommended file size and type for logo, answer from claude
+For logos in web development, here are the recommended specifications:
+File Types:
+
+SVG (Preferred)
+
+Scalable Vector Graphics
+Perfect for logos as it's resolution-independent
+Typically very small file size (2-10KB)
+Best for simple, flat designs
+Can be animated and styled with CSS
+
+PNG (Alternative)
+
+Use when SVG isn't feasible
+Supports transparency
+Recommended sizes:
+
+Header logo: 250-400px wide, under 100KB
+Favicon: 32x32px, 16x16px, and 64x64px
+Mobile: 160-200px wide
+Social media/sharing: 1200x630px (but keep under 300KB)
+Best Practices:
+
+Keep SVG logos under 15KB if possible
+For PNG logos, aim for under 100KB for large versions
+Provide multiple sizes for different contexts (mobile, desktop, social)
+Consider creating a sprite sheet if using multiple logo variants
+Include both light and dark versions if needed
+Use compression tools like SVGO for SVG or TinyPNG for PNG
+
+Additional Tip:
+Consider creating a logo system with:
+
+Full logo (with text)
+Symbol only (for favicon/small spaces)
+Horizontal and vertical layouts
+Light and dark variants
+
+Would you like me to explain any of these aspects in more detail?
+
+---

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/scss/style.css" />
+</head>
+<body class="body-blogcontent">
+    <header class="header">
+      <ul class="header__items">
+         <li class="header__item">
+            <img  class="header__img" id="icon__sun" src="/assets/icons/bright mode.svg" alt="sun icon">
+          </li>
+      </ul>     
+    </header>
+  <!-- Sunglasses Navigation Component -->
+  <div class="sunglasses">
+    <div class="sunglasses__container">
+      <div class="sunglasses__frame">
+        <div class="sunglasses__lens sunglasses__lens--left " data-target="articles">
+          <p class="sunglasses__label sunglasses__label--left">Articles</p>
+        </div>
+        <div class="sunglasses__bridge"></div>
+        <div class="sunglasses__lens sunglasses__lens--right" data-target="notes">
+          <p class="sunglasses__label sunglasses__label--right">Field Notes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Articles Section -->
+  <section id="articles" class="section section--articles ">
+    <!-- Featured Article -->
+    <article class="feature" id="feature-article">
+      <!-- JavaScript will populate this -->
+    </article>
+    
+    <hr class="divider">
+    
+    <!-- Archive Section -->
+    <div class="archive">
+      <div class="archive__grid" id="archive-container">
+        <!-- Archive posts will be injected here -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Field Notes Section -->
+  <section id="notes" class="section section--notes">
+    <div id="notes-container" class="notes">
+      <!-- Notes will be injected here -->
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="/js/pages/blog/content-sunglasses-v6.js"></script>
+  <script src="/js/pages/blog/content-articles.js"></script>
+  <script src="/js/pages/blog/content-notes.js"></script>
+    
+</body>
+</html>

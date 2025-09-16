@@ -1,0 +1,14 @@
+@forward "../../global/variables";
+
+
+[data-theme="light"]{
+.body-blogcontent{
+     background:var(--color-bg-light);
+}
+   
+}
+
+[data-theme="dark"]{
+     background:var(--color-bg-testing);
+   
+}

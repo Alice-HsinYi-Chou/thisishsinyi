@@ -1,0 +1,66 @@
+@use '../util/' as u;
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.2;
+  font-family: 'Playfair Display SC', serif; // Apply the new font to headers
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(36), u.rem(48));
+}
+
+h2 {
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(28), u.rem(36));
+}
+
+p {
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(16), u.rem(20));
+  //line-height: 1.5;
+
+  &.small {
+    font-size: u.rem(13);
+  }
+
+
+  //test new code//
+  // Font size and line height scaling
+  line-height: clamp(
+    1.2em, 
+    calc(1.2em + (1.45em - 1.2em) * ((100vw - 375px) / (1200px - 375px))),
+    1.45em
+  );
+
+  // Breakpoint-specific adjustments
+  @include u.breakpoint('medium') {
+    max-width: 70ch; // Medium screen line length
+  }
+
+  @include u.breakpoint('large') {
+    max-width: 80ch; // Large screen line length
+  }
+
+  @include u.breakpoint-down('medium') {
+    max-width: 50ch; // Small screen line length
+  }
+
+}
+
+a {
+  text-decoration: none;
+}
+
+p > a {
+  color: var(--color-text);
+  text-decoration: underline;
+  transition: color 150ms ease-in-out;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+

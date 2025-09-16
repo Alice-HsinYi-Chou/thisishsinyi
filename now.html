@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/scss/style.css">
+<body>
+    <section class="now__page-wrapper">
+        <header class="now-header"> 
+            <h1 class="now-header__title">NOW - LIFE ROUNDUP</h1> 
+            <nav class="now-nav"> 
+                <a class="now-nav__item now-nav__item--active js-now-nav" data-page="mypicks">MYPICKS</a>
+                <a class="now-nav__item js-now-nav" data-page="inner-landscape">INNER LANDSCAPE</a> 
+            </nav> 
+        </header>
+
+        <main class="now-main">
+            <!-- MYPICKS Page -->
+            <section class="tab tab--mypicks tab--active js-tab" data-page="mypicks">
+                <div class="mypicks">
+                    <!-- Left column for content -->
+                    <div class="mypicks__content">
+                        <h2 id="js-topic" class="mypicks__heading">BEST</h2>
+                            <!-- Content will be loaded from JSON -->
+                    </div>
+                    
+                    <!-- Right column for theme selector -->
+                    <div class="mypicks__sidebars">
+                        <div class="mypicks__sidebar mypicks__sidebar--active js-sidebar" data-theme="BEST">BEST</div>
+                        <div class="mypicks__sidebar js-sidebar" data-theme="FIRST">FIRST</div>
+                        <div class="mypicks__sidebar js-sidebar" data-theme="ESSENTIAL">ESSENTIAL</div>
+                        <div class="mypicks__sidebar js-sidebar" data-theme="PASTIME">PASTIME</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- INNER LANDSCAPE Page -->
+            <section class="tab tab--landscape js-tab" data-page="inner-landscape">
+                <div class="landscape">
+                    <div class="landscape__statement">
+                        Things brought me
+                        <div class="emotions">
+                            <div class="emotions__display js-display">
+                                <div class="emotion emotion--prev">peace</div>
+                                <div class="emotion emotion--active">joy</div>
+                                <div class="emotion emotion--next">happiness</div>
+                            </div>
+                            <div class="emotions__nav">
+                                <div class="emotions__arrow js-up">▲</div>
+                                <div class="emotions__arrow js-down">▼</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="landscape__content js-content">
+                        <div id="js-joy" class="landscape__canvas landscape__canvas--active js-canvas"></div>
+                        <div id="js-peace" class="landscape__canvas js-canvas"></div>
+                        <div id="js-happiness" class="landscape__canvas js-canvas"></div>
+                        <div id="js-fear" class="landscape__canvas js-canvas"></div>
+                        <div id="js-wonder" class="landscape__canvas js-canvas"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
+
+    <script src="js/pages/01-now/now-v2.js" ></script>
+</body>
+</html>

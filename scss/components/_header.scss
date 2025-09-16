@@ -1,0 +1,106 @@
+@use '../util/' as u;
+
+
+.header {
+  //position:sticky;
+  top:0;
+  left:0;
+  right:0;
+  //padding-block: clamp(0.625rem, 1%, 1.25rem);
+ // background-color: #1c1c22;
+  z-index: 10;
+
+ 
+ 
+
+ &__logo-container {
+  position: relative;
+  display: inline-block;
+  width: clamp(60px, 6vw, 150px); // Responsive width for the default logo
+  height: clamp(60px, 6vw, 150px);
+  
+  .logo-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); // Center both images perfectly
+    width: 100%;
+    height: 100%;
+    object-fit: contain; // Preserves aspect ratio within the container
+    transition: opacity 0.3s ease;
+  }
+  
+  .logo-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    .logo-name {
+      opacity: 0 !important;
+    }
+    
+    .logo-image {
+      opacity: 1 !important;
+    }
+  }
+}
+
+  &__items {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  &__item {
+    list-style-type: none;
+    
+    &:first-child {
+      margin-top: 4px;
+      margin-inline-end: auto;
+    }
+
+
+    &:nth-child(2) {
+      margin-inline: auto;
+
+      p{
+        color: var(--color-gray-main);
+        font-family: var(--font-logo);
+      }
+    }
+    
+
+    &:last-child{
+      cursor: pointer;
+      margin-inline-start: auto;
+      img{
+        width: clamp(15px, 2vw, 25px);
+      }
+  }
+
+  &__link {
+    @include u.fs-fluid(u.rem(375), u.rem(1100), u.rem(14), u.rem(16));
+    color: var(--color-text);
+    font-weight: 900;
+    font-family: 'EB Garamond';
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+  }
+
+
+
+}
+

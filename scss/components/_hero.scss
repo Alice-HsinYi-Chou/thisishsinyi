@@ -1,0 +1,273 @@
+@use '../util/' as u;
+
+//
+
+//
+.home__cards{
+  width: min(100% - 40px, u.rem(1100));
+  margin-inline:  auto;
+  margin-top: 0.5rem;
+}
+.grid__layout{
+  display: grid;
+  grid-template-columns: 1fr 50px clamp(230px, 26vw, 340px) 50px 1fr;
+  grid-template-areas:
+      ". prev slider next ."
+      ". pagination pagination pagination .";
+  align-items: center;  
+  /*Vertically centers items within their grid cells*/
+  margin: 0 auto; 
+  /*Centers the container horizontally*/
+  padding-bottom: 5rem;;
+ // border:1px dashed white;
+}
+
+
+.slider{
+  &__viewpoint{
+    grid-area: slider;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 5/6;
+    margin-top: 0.5rem;
+    margin-bottom:0.95rem;
+   // outline: 6px solid var(--mono-base);
+    /*sets the top and bottom margins*/
+  }
+  &__items{
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    list-style: none;
+    margin: 0;
+    padding: 0; /* remove the defualt padding of list*/
+  }
+  &__item{    
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+  }
+
+  &__item:nth-child(1) .card__background { 
+    background-image: url('/assets/img/homecard/more_crop.JPG');
+    background-size: cover;
+    background-position: center;
+  }
+  &__item:nth-child(2) .card__background { 
+    background: var(--color-card-bg); 
+  }
+  &__item:nth-child(3) .card__background { 
+    background-image: url('/assets/img/homecard/blog.JPG');
+    background-size: cover;
+    background-position: center;
+  }
+  &__item:nth-child(4) .card__background { 
+    background-image: url('/assets/img/homecard/gallery_adjusted.JPG');
+    background-size: 200%;
+
+  }
+  &__item:nth-child(5) .card__background { 
+    background-image: url('/assets/img/homecard/more_crop.JPG');
+    background-size: cover;
+    background-position: center;
+  }
+  &__item:nth-child(6) .card__background { 
+    background: var(--color-card-bg); 
+  }
+}
+.card{
+  &__background{
+    width: 100%; 
+    height: 100%;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    position: relative;  
+
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  &__background:hover {
+    transform: translateY(-2px);
+  }
+  &__link{
+    display: block;  
+    width: 100%;  
+    height: 100%;
+    padding-top:0.2rem;
+    padding-bottom: 1.5rem;
+    /*padding for limit the height of card__info section */
+  }  
+  &__info{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    gap: 0.85rem;
+   //border: 0.5px solid white;
+    color: var(--color-text-red-main);
+
+    &--1, &--2, &--4{
+      .card__title__text{
+        letter-spacing: 0.1em;
+        transform: scaleY(1.05);
+      }
+    }
+
+    &--3{
+      .card__title__text{
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+  &__title{
+    text-align: center;
+    position: relative;
+    margin-top: 0.5rem;
+    //border:1px solid black;
+  }
+  &__title__text {
+    font-family: var(--font-card-title);
+    text-transform: uppercase;
+    @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(30), u.rem(36));
+    max-width: 65%;
+    margin: 0 auto;  /* to horizontally align in center*/
+  }
+
+  &__title__text::after {
+    content: "";
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 5px;
+    border-radius: 2px;
+  } 
+  &__subtitle{
+    text-align: center;
+    position: relative;
+    margin: 0.5rem 0px;
+    transition: 0.3s ease; 
+    opacity:0; 
+    padding-top: 0;
+    border-radius: 3px;
+    color: var(--color-text-red-main);
+
+    &--1{
+      transform: translateY(1.5rem);
+      background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(255, 255, 255, 0.5) 50%, 
+      rgba(255, 255, 255, 0) 100%);
+      padding-block: 0.65rem;
+    }
+    &--2{
+      background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(255, 255, 255, 0.8) 50%, 
+      rgba(255, 255, 255, 0) 100%);
+      padding-block: 0.25rem;
+    }
+    &--3{
+      background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0.0) 0%, 
+      rgba(255, 255, 255, 0.5) 50%, 
+      rgba(255, 255, 255, 0) 100%);
+      padding-block: 0.7rem;
+      transform: translateY(-1rem);
+    }
+    &--4{
+      background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.4) 50%, 
+      rgba(255, 255, 255, 0) 100%);
+      padding-block: 0.7rem;
+    }
+    
+  }
+  &__background:hover .card__subtitle{
+    opacity: 1;
+  }
+  &__subtitle__text{
+    font-family: var(--font-card-caption);
+    @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(18), u.rem(28));
+    margin: 0.2rem;
+  }
+}
+/* Pagination styling */
+.pagination {
+  grid-area: pagination;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+/*are above three are all nesscessary?*/
+  gap: 8px;
+  height: 0.625rem;
+}
+
+/*the line*/
+.bullet {
+  width: 40px;
+  height: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bullet.active {
+  width: 40px;
+  border-radius: 10px;
+  background:var(--mono-contrast);
+}
+/* Enhanced tooltip styling */
+.bullet .tooltip {
+  position: absolute;
+  bottom: calc(100% - 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+  color: var(--mono-contrast);
+}
+.bullet:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Navigation buttons */
+.nav-button {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: none;
+  border-radius: 50%;
+  color: var(--neutral-light);
+  background-color:var(--mono-tint);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button:hover {
+  background: var(--mono-contrast);
+  transform:scale(1.05)
+}
+
+.nav-button.prev { 
+  grid-area: prev; justify-self: center; 
+}
+.nav-button.next { 
+grid-area: next; 
+justify-self: center; 
+rotate: 180deg;
+}

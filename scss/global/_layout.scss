@@ -1,0 +1,12 @@
+@use '../util/' as u;
+
+.wrapper {
+  width: min(100% - 40px, u.rem(1100));
+  //border:1px solid white;
+  margin-inline:  auto;
+  //&.has-padding {
+  // padding-block: 40px;
+     // @include u.breakpoint(medium) {
+       // padding-block: 60px;
+     // }}
+}

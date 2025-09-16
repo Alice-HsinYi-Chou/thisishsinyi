@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/scss/style.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="wrapper flexbox">
+            <ul class="header__items">
+                <li class="header__item" >
+                    <a href="/" class="header__logo-container">
+                        <img class="header__img logo-name" src="/assets/logos/logo-test-modified.png" alt="avatar">
+                        <img class="header__img logo-image" src="/assets/logos/new-test-modified.png" alt="avatar hover">
+                     </a>
+                </li>
+                <li class="header__item">
+                    <a class="header__mid" href="/gallery.html">Gallery</a> <span class="header__mid-albumname"><small><small><small><i>[urban]</i></small></small></small></span>
+                </li>
+                <li class="header__item">
+                    <img  class="header__img" id="icon__sun" src="/assets/icons/bright mode.svg" alt="sun icon">
+                </li>
+            </ul>
+               
+
+        </nav>
+
+    </header>
+    <section class="album">
+        <div class="ablum__wrapper">
+            <div class="album__grid">
+                <div class="album__all-image">
+                    <img src="/assets/img/gallery/02-urban/urban01.jpg " alt="" onclick="FullView(this.src)" >
+                </div>
+                <div class="album__all-image">
+                    <img src="/assets/img/gallery/02-urban/urban02.jpg " alt="" onclick="FullView(this.src)" >
+                </div>
+                <div class="album__all-image">
+                    <img src="/assets/img/gallery/02-urban/urban03.JPG  " alt="" onclick="FullView(this.src)" >
+                </div>
+                <div class="album__all-image">
+                    <img src="/assets/img/gallery/02-urban/urban04.JPG " alt="" onclick="FullView(this.src)" >
+                </div>
+                <div class="album__all-image">
+                    <img src="/assets/img/gallery/02-urban/urban05.JPG " alt="" onclick="FullView(this.src)" >
+                </div>
+
+                <div class="album__all-image album__empty-box">
+                    <div class ="text">coming soon</div>
+                    <img src="/assets/img/gallery/02-urban/urban06.JPG " alt="" onclick="FullView(this.src)" >
+                </div>
+
+            </div>
+            
+            <button class="album__expand-btn" id="expandbtn">
+                <div class="album__expand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </button>
+            <div class="album__wrapper-hidden" id="hiddenAlbum">
+                <div class="album__all-image">
+                    <img src="/assets/img/gallery/02-urban/urban07.JPG " alt="" onclick="FullView(this.src)" >
+                </div>
+                <div class="album__all-image">
+                    <img src="/assets/img/gallery/02-urban/urban08.jpg " alt="" onclick="FullView(this.src)" >
+                </div>
+            </div>
+            <button class="album__expand-btn album__collapse-btn" id="collapsebtn">
+                <div class="album__expand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </button>
+        </div>
+
+        <div class="transition__divider"></div>
+
+        <div class="navigation__nav-area">
+            <button class="navigation__back-btn">
+                <a href="/gallery.html"><img class="navigation__back-icon" src="/assets/icons/door-enter.svg" alt="leave gallery"></a>
+            </button>
+            <div class="navigation__album-btns">
+                <a href="/mypage/gallery/ablum01-sunset.html" class="navigation__album-btn">01Sunset</a>
+                <a href="#" class="navigation__album-btn-active">02Urban</a>
+                <a href="/mypage/gallery/ablum03-scenery.html" class="navigation__album-btn">03Scenery</a>
+                <a href="/mypage/gallery/ablum04-living-things.html" class="navigation__album-btn">04Living Things</a>
+                <a href="/mypage/gallery/ablum05-misc.html" class="navigation__album-btn">05Misc.</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="full-view" id="fullImageView">
+        <button class="full-view__close" onclick="CloseFullView()">×</button>
+        <div class="full-view__content">
+            <img src="" alt="Full View" class="full-view__image" id="fullImage">
+        </div>
+    </div>
+    <script src="/js/pages/gallery-full-image-view.js"></script>
+    <script src="/js/theme-toggle-test.js"></script>
+    <script src="/js/pages/album-v2.js"></script>
+</body>
+</html>

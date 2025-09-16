@@ -1,0 +1,89 @@
+
+{
+  "meta": {
+    "publishDate": "2025-07-08",
+    "period": "2025-07",
+    "status": "current"
+  },
+  "mypicks": {
+    "BEST": {
+      "title": "Recent BEST",
+      "intro": "drumroll please...",
+      "sections": [
+        {
+          "heading": "nil",
+          "items": [
+            ""
+          ]
+        },
+        {
+          "heading": "",
+          "items": [
+            ""
+          ]
+        }
+      ]
+    },
+    "FIRST": {
+      "title": "Recent FIRST",
+      "intro": "Something fresh in day to day.",
+      "sections": [
+        {
+          "heading": "Comedy show",
+          "items": [
+            "Last minute decision that me and my friends went running for about an hour then went to the stand up comedy show at COMEDY PLUS. First time I was there, I liked some of the jokes but mostly I enjoyed seeing someone perform in a raw and amusing way. From their personal experiences, then to switch perceptions, to articulate or deliver the story in a connecting yet off kind of way. I like the creativity needed and the rawness of doing that. "
+          ]
+        },
+        {
+          "heading": "Typhoon break",
+          "items": [
+            "2025 first typhoon break. Not expected to have a break. I was in cleaning mode full on. From vacuuming, mopping, changing sheets, recycling, throwing away old clothes, cleaning up piled up stuff on the desk and floor. That’s exactly what I needed - resetting the living environment. And then cleaning up my mind, taking a nap, and doing some journaling at an outdoor wooden desk while the winds were getting stronger. This also helped a lot.  "
+          ]
+        }
+      ]
+    },
+    "ESSENTIAL": {
+      "title": "ESSENTIAL",
+      "intro": "things makes me afloat",
+      "sections": [
+        {
+          "heading": "Heptabase",
+          "items": [
+            " You all should check this out. I’ve been dumping so many things on Heptabase. I once tried notion, but notion somehow needed the ability to build aesthetic structure which is out of my capacity. I like to have a space that is intuitive enough to dump things out. It’s been my everyday life. I have listed the heptabase test out for a few months, glad i did make a try starting in May. The startup founder is a young Taiwanese. Shot out to him! "
+          ]
+        }
+      ]
+    },
+    "PASTIME": {
+      "title": "PASTIME",
+      "intro": "Activities and hobbies that bring consistent pleasure and engagement.",
+      "sections": [
+        {
+          "heading": "",
+          "items": [
+            "Guitar - not Ed Sheeran, but Oasis vibe. So one day I was thinking of picking up the classic ed sheeran’s song - A team, which is probably the first song I knew from him and was introduced by my classmates in junior high. The strumming of that song is new and tricky for me and I was trying to spare some time to learn it to an acceptable level. I don’t know, maybe 15 minutes went by and my little brother entered the room. “Why are you playing this one, you should play that song you sent me a few days ago” He was referring to a clip of XXX playing Don’t look back in anger by Oasis. I sent that clip to him for one, It's a beautiful cover. Secondly I was hoping he’ll pick up the chords and teach me how to play. He didn’t. And I was easily influenced. Sorry Ed sheeran. I then searched for how to play Don’t look back in anger by Oasis. Great one. Now the guitar is still tuned at 455Hz.",
+            "Book: 101 Essays That Will Change The Way You Think by Brianna West. not a bookworm, yet this type of book i do enjoy. Send recommendation. ",
+            ""
+          ]
+        }
+      ]
+    }
+  },
+  "innerLandscape": {
+    "joy": {
+      "content": "Clients make a second appointment. I’m happy. Live Oasis clip on youtube. "
+    },
+    "peace": {
+      "content": " lay on grass and read lesuirely. Stress comes from doing too little of what you care about. This quote has been a great reminder for myself and  lead me to guide myself into more peaceful state"
+    },
+    "happiness": {
+      "content": "playing guitar and singing. Running with friends and chatting with them are great. Tasty Squid that brother's friend generiosly share with us. Fried Squid with peper, simple and tasty. "
+    },
+    "fear": {
+      "content": "nothing comes to mind"
+    },
+    "wonder": {
+      "content": "oh the blue flower. Very cool "
+    }
+  }
+}

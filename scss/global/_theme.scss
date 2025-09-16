@@ -1,0 +1,85 @@
+
+@forward "_variables";
+:root {
+  //background//
+  --color-bg-testing: hsl(29, 87%, 46%);
+  --color-bg-light: hsl(36, 21.74%, 95.49%);
+  //--color-bg-light:HSL(30, 20%, 96%);
+  --color-bg-dark: hsl(240, 7%, 11%);
+  //--color-bg-dark:#1c1c22;
+  //--color-bg-dark: hsl(111.43, 21.21%, 6.47%);
+
+  //card background//
+  --color-card-bg:hsl(352.5, 8.7%, 81.96%);
+  
+  //color-text//
+  --color-text-red-main: hsl(0, 87.39%, 21.76%);
+  --color-text-red-light: hsl(0, 87.1%, 30.39%);
+  --color-text-red-dark: hsl(0, 100%, 12.35%);
+
+  //neutral colors//
+  --color-black: hsl(0, 0%, 0%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-white-creamy: #f7f3ed;
+  --color-gray-main: hsl(0, 2%, 55%);
+  --color-gray-light: hsl(0, 2%, 90%);
+  --color-gray-dark: hsl(30, 1.67%, 23.53%);
+
+  //other colors//
+  --color-red-optional:hsl(3.27, 59.04%, 48.82%);
+  
+  --color-button-bg--theme-l:hsla(38, 14%, 85%, 0.817) ;
+  --color-button-ct--theme-l:hsla(0, 0%, 25%, 0.8);
+
+  --color-button-bg--theme-d:hsla(0, 0%, 60%, 0.5);
+  --color-button-ct--theme-d:hsla(0, 0%, 100%, 0.9);
+
+}
+[data-theme="light"] {
+  --background-color: var(--color-bg-light);
+  --card-background: var(--color-card-bg);
+  --text-primary: var(--color-black);
+  --text-secondary: var(--color-text-red-light);
+  --text-accent: var(--color-text-red-dark);
+  --neutral-main: var(--color-gray-main);
+  --neutral-light: var(--color-gray-light);
+  --neutral-dark: var(--color-gray-dark);
+  --mono-base: var(--color-white);
+  --mono-tint: var(--color-white-creamy);
+  --mono-contrast: var(--color-black);
+  --accent: var(--color-red-optional);
+
+  .bullet{
+    background:var(--color-button-bg--theme-l);
+  }
+  .bullet.active{
+    background:var(--color-button-ct--theme-l) ;
+  }
+  .header{
+    background-color: var(--color-bg-light);
+  }
+}
+
+[data-theme="dark"] {
+  --background-color: var(--color-bg-dark);
+  --card-background: var(--color-card-bg);
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-gray-light);
+  --text-accent: var(--color-red-optional);
+  --neutral-main: var(--color-gray-light);
+  --neutral-light: var(--color-gray-main);
+  --neutral-dark: var(--color-white);
+  --mono-base: var(--color-gray-dark);  // Primary dark surface
+  --mono-tint: var(--color-black);   // Deeper dark surface
+  --mono-contrast: var(--color-white);
+  --accent: var(--color-red-optional);
+
+  .bullet{
+    background:var(--color-button-bg--theme-d);
+  }
+  .bullet.active{
+    background:var( --color-button-ct--theme-d) ;
+  }
+}
+
+/*above is the dark and light mode for home page*/
