@@ -1,4 +1,12 @@
-NOW Mypicks - BEst, First, Quote, Content, 
+That’s it — now your workflow is:
+
+Edit locally
+
+git add . && git commit -m "update" && git push
+
+Netlify auto-updates your live site
+
+NOW Mypicks - BEst, First, Quote, Content,
 
 -file structure
 -content then blog content; now-content
